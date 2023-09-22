@@ -18,10 +18,6 @@ export class UsersService extends PrismaCrudService {
     return this.prisma.user.create({ data: userForDb });
   }
 
-  findAll() {
-    return this.prisma.user.findMany();
-  }
-
   findOne(id: string) {
     return this.prisma.user.findUnique({ where: { id } });
   }
