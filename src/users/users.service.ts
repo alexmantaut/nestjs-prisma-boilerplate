@@ -14,6 +14,7 @@ export class UsersService extends PrismaCrudService {
   }
 
   create(createUserDto: CreateUserDto) {
+    //TODO: Duplicated entity throws exception, fix
     const { password, ...userForDb } = createUserDto;
     return this.prisma.user.create({ data: userForDb });
   }
