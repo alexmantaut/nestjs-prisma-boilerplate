@@ -1,7 +1,7 @@
 [![build](https://github.com/alexmantaut/nestjs-prisma-boilerplate/actions/workflows/node.js.yml/badge.svg)](https://github.com/alexmantaut/nestjs-prisma-boilerplate/actions/workflows/node.js.yml)
 ## Description
 
-Boilerplate repo for NestJS projects with Prisma.
+Boilerplate code for a Rest API, implemented with Prisma and NestJS.
 
 ## Installation
 
@@ -12,8 +12,11 @@ $ npm install
 ## Running the app
 
 ```bash
-# development
-$ npm run start
+# starting the DB
+$ docker-compose up --build
+
+# migrating the DB
+$ npm run prisma:migrate
 
 # watch mode
 $ npm run start:dev
