@@ -1,3 +1,4 @@
+[![build](https://github.com/alexmantaut/nestjs-prisma-boilerplate/actions/workflows/node.js.yml/badge.svg)](https://github.com/alexmantaut/nestjs-prisma-boilerplate/actions/workflows/node.js.yml)
 ## Description
 
 Boilerplate repo for NestJS projects with Prisma.
