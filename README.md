@@ -1,4 +1,5 @@
 [![build](https://github.com/alexmantaut/nestjs-prisma-boilerplate/actions/workflows/node.js.yml/badge.svg)](https://github.com/alexmantaut/nestjs-prisma-boilerplate/actions/workflows/node.js.yml)
++ [![cov](https://alexmantaut.github.io/nestjs-prisma-boilerplate/badges/coverage.svg)](https://github.com/alexmantaut/nestjs-prisma-boilerplate/actions)
 ## Description
 
 Boilerplate code for a Rest API, implemented with Prisma and NestJS.
