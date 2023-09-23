@@ -75,6 +75,7 @@
       "**/*.(t|j)s"
     ],
     "coverageDirectory": "../coverage",
+    "coverageReporters": ["json-summary"],
     "testEnvironment": "node"
   }
 }
