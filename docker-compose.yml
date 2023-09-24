@@ -4,11 +4,35 @@ services:
     image: postgres:16.0
     restart: always
     env_file:
-      - .env
+      - docker.env
     volumes:
       - db:/var/lib/postgresql/data
     ports:
       - '25432:5432'
+    networks:
+      - db
+
+  api-dev:
+    build:
+      dockerfile: ./Dockerfile
+      target: development
+    command: npm run start:debug
+    env_file:
+      - docker.env
+      - auth0.env
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - '19229:9229'
+      - '13000:3000'
+    depends_on:
+      - db
+    networks:
+      - db
 
 volumes:
   db:
+
+networks:
+  db:
+    driver: bridge

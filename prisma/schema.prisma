@@ -2,7 +2,8 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
 }
 
 datasource db {
@@ -11,7 +12,7 @@ datasource db {
 }
 
 model User {
-  id        String   @id @db.Uuid @default(uuid())
+  id        String   @id @default(uuid()) @db.Uuid
   firstName String?  @map("first_name")
   lastName  String?  @map("last_name")
   email     String?
