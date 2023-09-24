@@ -18,6 +18,7 @@
     "**/node_modules/": true,
     "**/dist/": true,
     "**/coverage/": true,
+    "**/badges/": true,
     "**/.terraform/": true,
     "**/*.plan": true,
     "**/*.tfstate*": true
