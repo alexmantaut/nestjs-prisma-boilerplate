@@ -5,12 +5,17 @@ import { PrismaService } from './prisma/prisma.service';
 import { UsersModule } from './users/users.module';
 import { AuthzModule } from './authz/authz.module';
 import { ConfigModule } from '@nestjs/config';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 @Module({
   imports: [
     PrismaModule,
     UsersModule,
-    ConfigModule.forRoot({}),
+    ConfigModule.forRoot({
+      ignoreEnvFile: true,
+    }),
     /**
      *  PrismaCrudModule registers the PrismaService provider globally.
      *  No need to provide it anywhere else!
