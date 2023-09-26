@@ -7,11 +7,7 @@ terraform {
   }
 }
 
-provider "auth0" {
-  domain        = var.auth0_domain
-  client_id     = var.auth0_client_id
-  client_secret = var.auth0_client_secret
-}
+provider "auth0" {}
 
 resource "auth0_client" "terraform-secure-express" {
   name            = "Terraform Secure Express"
@@ -25,12 +21,6 @@ resource "auth0_client" "terraform-secure-express" {
   }
 }
 
-variable "api-identifier" {
-  type    = string
-  default = "http://localhost:3000"
-}
-
-# This is an example of an Auth0 connection.
 resource "auth0_connection" "api_connection" {
   name                 = "API"
   strategy             = "auth0"

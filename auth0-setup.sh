@@ -5,18 +5,18 @@ set -e
 ORIGINAL_DIR="$PWD"
 
 
-if [ -z "${TF_VAR_auth0_domain}" ]; then 
-    echo "TF_VAR_auth0_domain not set, please configure"
+if [ -z "${AUTH0_DOMAIN}" ]; then 
+    echo "AUTH0_DOMAIN not set, please configure"
     exit -1 
 fi
 
-if [ -z "${TF_VAR_auth0_client_id}" ]; then 
-    echo "TF_VAR_auth0_client_id not set, please configure"
+if [ -z "${AUTH0_CLIENT_ID}" ]; then 
+    echo "AUTH0_CLIENT_ID not set, please configure"
     exit -1 
 fi
 
-if [ -z "${TF_VAR_auth0_client_secret}" ]; then 
-    echo "TF_VAR_auth0_client_secret not set, please configure"
+if [ -z "${AUTH0_CLIENT_SECRET}" ]; then 
+    echo "AUTH0_CLIENT_SECRET not set, please configure"
     exit -1 
 fi
 
@@ -30,7 +30,7 @@ terraform apply -input=false
 CLIENT_ID=$(terraform output client_id)
 CLIENT_SECRET=$(terraform output client_secret)
 API_IDENTIFIER=$(terraform output auth0_api_identifier)
-DOMAIN=$(terraform output auth0_domain)
+DOMAIN=$(echo ${AUTH0_DOMAIN})
 
 cd $ORIGINAL_DIR
 

@@ -1,7 +1,3 @@
-output "auth0_domain" {
-  value = var.auth0_domain
-}
-
 output "client_id" {
   value = auth0_client.terraform-secure-express.client_id
 }
