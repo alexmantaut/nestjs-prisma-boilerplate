@@ -8,6 +8,7 @@ import {
   Delete,
   Query,
   NotFoundException,
+  UseGuards,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
@@ -20,7 +21,8 @@ import {
   ApiTags,
 } from '@nestjs/swagger';
 import { UserDto } from './dto/user.dto';
-
+import { AuthGuard } from '@nestjs/passport';
+@UseGuards(AuthGuard('jwt'))
 @ApiTags('Users')
 @Controller('users')
 export class UsersController {
