@@ -14,7 +14,7 @@ dotenv.config();
     PrismaModule,
     UsersModule,
     ConfigModule.forRoot({
-      ignoreEnvFile: true,
+      envFilePath: ['.env', 'auth0.env'],
     }),
     /**
      *  PrismaCrudModule registers the PrismaService provider globally.
