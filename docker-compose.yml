@@ -21,7 +21,7 @@ services:
       - docker.env
       - auth0.env
     volumes:
-      - .:/usr/src/app
+      - ./src:/usr/src/app/src
     ports:
       - '19229:9229'
       - '13000:3000'
