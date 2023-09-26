@@ -3,6 +3,7 @@ import { PrismaCrudModule } from 'nestjs-prisma-crud';
 import { PrismaModule } from './prisma/prisma.module';
 import { PrismaService } from './prisma/prisma.service';
 import { UsersModule } from './users/users.module';
+import { AuthzModule } from './authz/authz.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { UsersModule } from './users/users.module';
     PrismaCrudModule.register({
       prismaService: PrismaService,
     }),
+    AuthzModule,
   ],
   controllers: [],
   providers: [],
